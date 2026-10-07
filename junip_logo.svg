@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#FFFFFF"/>
+  <circle cx="100" cy="100" r="70" fill="#1B8A4C"/>
+  <text x="84" y="132" text-anchor="middle" font-family="Montserrat, Arial Black, Helvetica, Arial, sans-serif" font-weight="900" font-size="96" fill="#FFFFFF">J</text>
+  <text x="124" y="106" text-anchor="middle" font-family="Montserrat, Arial Black, Helvetica, Arial, sans-serif" font-weight="900" font-size="64" fill="#FFFFFF">*</text>
+</svg>
