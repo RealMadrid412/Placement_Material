@@ -1,0 +1,117 @@
+[
+  {
+    "operationName": "flatten",
+    "params": {
+      "fieldToFlatten": "Header"
+    }
+  },
+  {
+    "operationName": "renameField",
+    "params": {
+      "fieldToRename": "Time",
+      "newFieldName": "report_time"
+    }
+  },
+  {
+    "operationName": "fieldTransformer",
+    "params": {
+      "fieldToTransform": "Rows",
+      "transformationChain": [
+        {
+          "operationName": "fieldTransformer",
+          "params": {
+            "fieldToTransform": "Row",
+            "transformationChain": [
+              {
+                "operationName": "fieldTransformer",
+                "params": {
+                  "fieldToTransform": "Rows",
+                  "transformationChain": [
+                    {
+                      "operationName": "fieldTransformer",
+                      "params": {
+                        "fieldToTransform": "Row",
+                        "transformationChain": [
+                          {
+                            "operationName": "fieldTransformer",
+                            "params": {
+                              "fieldToTransform": "Rows",
+                              "transformationChain": [
+                                {
+                                  "operationName": "fieldTransformer",
+                                  "params": {
+                                    "fieldToTransform": "Row",
+                                    "transformationChain": [
+                                      {
+                                        "operationName": "fieldTransformer",
+                                        "params": {
+                                          "fieldToTransform": "Rows",
+                                          "transformationChain": [
+                                            {
+                                              "operationName": "fieldTransformer",
+                                              "params": {
+                                                "fieldToTransform": "Row",
+                                                "transformationChain": [
+                                                  {
+                                                    "operationName": "fieldTransformer",
+                                                    "params": {
+                                                      "fieldToTransform": "Rows",
+                                                      "transformationChain": [
+                                                        {
+                                                          "operationName": "fieldTransformer",
+                                                          "params": {
+                                                            "fieldToTransform": "Row",
+                                                            "transformationChain": [
+                                                              {
+                                                                "operationName": "fieldTransformer",
+                                                                "params": {
+                                                                  "fieldToTransform": "Rows",
+                                                                  "transformationChain": [
+                                                                    {
+                                                                      "operationName": "fieldTransformer",
+                                                                      "params": {
+                                                                        "fieldToTransform": "Row",
+                                                                        "transformationChain": [
+                                                                          {
+                                                                            "operationName": "stringifyField",
+                                                                            "params": {
+                                                                              "fieldToStringify": "Rows"
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]
