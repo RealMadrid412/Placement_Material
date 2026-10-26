@@ -125,3 +125,6 @@ Files: `PO_Details_table.json` (replace the `PO_Details` entry in `extraConfig.t
 
 ## Single template with both conditions (IncludeProducts true)
 `PO_Details_With_Products_table.json`: one template, `IncludeProducts:true`, extraction selects `PurchaseOrders` and `Products` without decomposing. One row per week window and page, with both as nested repeated records (no `PoId` key; use UNNEST). Uses the same action script. `PO_Details_table.json` (normalized, one row per PO) is unchanged. Sample: `sample_getPOs_IncludeProducts_true.json`.
+
+## Both conditions in one template
+`PO_Details_Combined_table.json`: for each week window, calls getPOs with `IncludeProducts` = false, then true (`include_products` parent dimension, inner to the date range). Each row carries an `IncludeProducts` BOOLEAN column; false rows have `Products` null. Same nested `PurchaseOrders`/`Products` shape as `PO_Details_With_Products`, so PO data is stored twice per window.
