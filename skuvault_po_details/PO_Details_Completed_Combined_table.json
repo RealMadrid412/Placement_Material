@@ -58,7 +58,7 @@
           "alias": "",
           "datePattern": "",
           "enableHashing": false,
-          "maxSize": 14,
+          "maxSize": 21,
           "ignoreDataTypeChanges": false,
           "autoCreated": false,
           "dataProcessorGeneratedColumn": true
@@ -565,7 +565,7 @@
             },
             {
               "name": "ReceivedDate",
-              "type": "STRING",
+              "type": "TIMESTAMP",
               "mode": "NULLABLE",
               "fields": [],
               "primary": false,
