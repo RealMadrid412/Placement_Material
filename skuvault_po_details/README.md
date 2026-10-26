@@ -122,3 +122,6 @@ Same as above with `"IncludeProducts": true`. Not used by the connector: `Produc
 - Auth body type set to RAW (JSON), matching the Content-Type header.
 
 Files: `PO_Details_table.json` (replace the `PO_Details` entry in `extraConfig.tables`), `PO_Details_entitySourceTemplate.json` (readable copy), `po_details_action_script.js` / `.b64`.
+
+## Single template with both conditions (IncludeProducts true)
+`PO_Details_With_Products_table.json`: one template, `IncludeProducts:true`, extraction selects `PurchaseOrders` and `Products` without decomposing. One row per week window and page, with both as nested repeated records (no `PoId` key; use UNNEST). Uses the same action script. `PO_Details_table.json` (normalized, one row per PO) is unchanged. Sample: `sample_getPOs_IncludeProducts_true.json`.
