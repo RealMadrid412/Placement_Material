@@ -128,3 +128,6 @@ Files: `PO_Details_table.json` (replace the `PO_Details` entry in `extraConfig.t
 
 ## Both conditions in one template
 `PO_Details_Combined_table.json`: for each week window, calls getPOs with `IncludeProducts` = false, then true (`include_products` parent dimension, inner to the date range). Each row carries an `IncludeProducts` BOOLEAN column; false rows have `Products` null. Same nested `PurchaseOrders`/`Products` shape as `PO_Details_With_Products`, so PO data is stored twice per window.
+
+## PO_Details_Completed
+Same changes with `Status: "Completed"`: `PO_Details_Completed_table.json` (normalized, IncludeProducts false) and `PO_Details_Completed_Combined_table.json` (false/true enumerator). `entitySourceName` is now `PO_Details_Completed` (was `PO_Details`). Completed samples show `LineItems.ReceivedDate` populated (e.g. `2026-06-25T00:00:00.0000000Z`), which confirms the TIMESTAMP column. Samples: `sample_getPOs_Completed_IncludeProducts_{false,true}.json`.
