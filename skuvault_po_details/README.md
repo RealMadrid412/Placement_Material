@@ -134,3 +134,6 @@ Same changes with `Status: "Completed"`: `PO_Details_Completed_table.json` (norm
 
 ## Flat templates (no UNNEST)
 `PO_Details_Flat_table.json` and `PO_Details_Completed_Flat_table.json`: one row per PO line item with PO header, carrier, and line fields as typed top-level columns (34 columns). `IncludeProducts:false` (the true response has the same PO data). PO-level `PrivateNotes`/`PublicNotes` are renamed `PoPrivateNotes`/`PoPublicNotes` (the line items have columns with the same names), and PO-level `Costs` is stored as JSON text in `PoCosts`. Primary key: PoId + ProductId + Variant + Identifier.
+
+## Flat products (IncludeProducts true)
+`PO_Products_Flat_table.json` / `PO_Products_Completed_Flat_table.json`: `IncludeProducts:true`, extraction selects `Products`, one row per product (43 columns, primary key `Id`). `Attributes`, `SupplierInfo`, `Pictures`, `Statuses` are stored as JSON text so the table stays flat. Join to the flat PO tables on `ProductId = Id`. A product repeats across windows, so use upsert.
