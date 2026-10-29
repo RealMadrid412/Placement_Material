@@ -131,3 +131,6 @@ Files: `PO_Details_table.json` (replace the `PO_Details` entry in `extraConfig.t
 
 ## PO_Details_Completed
 Same changes with `Status: "Completed"`: `PO_Details_Completed_table.json` (normalized, IncludeProducts false) and `PO_Details_Completed_Combined_table.json` (false/true enumerator). `entitySourceName` is now `PO_Details_Completed` (was `PO_Details`). Completed samples show `LineItems.ReceivedDate` populated (e.g. `2026-06-25T00:00:00.0000000Z`), which confirms the TIMESTAMP column. Samples: `sample_getPOs_Completed_IncludeProducts_{false,true}.json`.
+
+## Flat templates (no UNNEST)
+`PO_Details_Flat_table.json` and `PO_Details_Completed_Flat_table.json`: one row per PO line item with PO header, carrier, and line fields as typed top-level columns (34 columns). `IncludeProducts:false` (the true response has the same PO data). PO-level `PrivateNotes`/`PublicNotes` are renamed `PoPrivateNotes`/`PoPublicNotes` (the line items have columns with the same names), and PO-level `Costs` is stored as JSON text in `PoCosts`. Primary key: PoId + ProductId + Variant + Identifier.
