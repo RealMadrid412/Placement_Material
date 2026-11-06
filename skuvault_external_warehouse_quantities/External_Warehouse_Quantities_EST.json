@@ -231,6 +231,9 @@
               "predefinedEntities": [
                 {
                   "GetTotalFbaQuantities": false
+                },
+                {
+                  "GetTotalFbaQuantities": true
                 }
               ],
               "prematureEntitySourceTerminationStrategy": {
