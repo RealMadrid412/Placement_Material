@@ -95,8 +95,7 @@
       "WarehouseId": "{{$.warehouse.Id}}",
       "WarehouseCode": "{{$.warehouse.Code}}",
       "WarehouseName": "{{$.warehouse.Name}}",
-      "GetTotalFbaQuantities": "{{$.fba_mode.GetTotalFbaQuantities}}",
-      "FbaMode": "{{$.fba_mode.FbaMode}}"
+      "GetTotalFbaQuantities": "{{$.fba_mode.GetTotalFbaQuantities}}"
     },
     "dimensionEnumerators": [
       {
@@ -231,12 +230,10 @@
               "entitySourceName": "fba_modes",
               "predefinedEntities": [
                 {
-                  "GetTotalFbaQuantities": false,
-                  "FbaMode": "WAREHOUSE_SPECIFIC"
+                  "GetTotalFbaQuantities": false
                 },
                 {
-                  "GetTotalFbaQuantities": true,
-                  "FbaMode": "TOTAL_FBA_AGGREGATE"
+                  "GetTotalFbaQuantities": true
                 }
               ],
               "prematureEntitySourceTerminationStrategy": {
